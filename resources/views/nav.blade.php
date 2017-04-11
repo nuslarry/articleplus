@@ -4,7 +4,7 @@
       <div class="navbar-header">
 
         <a class="navbar-brand" href="/">
-          <i class="glyphicon glyphicon-heart-empty"></i> SkillXchg
+          <i class="glyphicon glyphicon-heart-empty"></i> Articleplus
         </a>
 
         <button class="navbar-toggle collapsed" data-target="#navcol-1" data-toggle="collapse">
