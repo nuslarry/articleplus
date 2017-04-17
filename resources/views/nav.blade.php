@@ -25,7 +25,15 @@
           <li><a href="s" class="navbar-link">Browse Posts</a></li>
           <li><a href="s" class="navbar-link">People</a></li>
         </ul>
-
+        <ul class="nav navbar-nav navbar-right">
+          @if(Auth::check())
+          <li><a href="">Hi {{Auth::user()->name}}</a></li>
+          <li><a href="{{route('user.getLogOut')}}">Log out</a></li>
+          @else
+          <li><a href="{{route('user.getsingup')}}">Sign up</a></li>
+          <li><a href="{{route('user.getlogin')}}">Login in</a></li>
+          @endif
+        </ul>
       </div>
       <!-- end of navbar-collapse -->
     </div>

@@ -3,6 +3,7 @@
 articleplus
 @stop
 @section('main')
+
 <div class="row">
   <div class="col-sm-6 col-md-4" >
     <div class="thumbnail" >
@@ -32,6 +33,7 @@ articleplus
   	    <a class="nav-link disabled" href="#">Disabled</a>
   	  </li>
     </ul>
+
   </div>
 </div>
 @stop
