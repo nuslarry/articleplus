@@ -18,13 +18,12 @@ Route::get('/500', ['as'=>'500','uses'=>'HomeController@internalError']);
 
 Route::group(['prefix'=>'user'],function(){
 	Route::group(['middleware'=>'guest'],function(){
+		Route::get('/singup', ['as'=>'user.getsingup','uses'=>'UserController@getsignup']);
+		Route::post('/singup', ['as'=>'user.postsingup','uses'=>'UserController@postsignup']);
 
+		Route::get('/singin', ['as'=>'user.getlogin','uses'=>'UserController@getlogin']);
+		Route::post('/singin', ['as'=>'user.postlogin','uses'=>'UserController@postlogin']);
 	});
-	Route::get('/singup', ['as'=>'user.getsingup','uses'=>'UserController@getsignup']);
-	Route::post('/singup', ['as'=>'user.postsingup','uses'=>'UserController@postsignup']);
-
-	Route::get('/singin', ['as'=>'user.getlogin','uses'=>'UserController@getlogin']);
-	Route::post('/singin', ['as'=>'user.postlogin','uses'=>'UserController@postlogin']);
 
 });
 
