@@ -25,6 +25,7 @@ class UserController extends Controller
 		}else{
 			$user=new User(['name'=>$request->input('name'),'email'=>$request->input('email'),'password'=>bcrypt($request->input('password'))]);
 			$user->save();
+			Auth::login($user);
 			return redirect()->route('index');
 		}
     }
@@ -44,7 +45,10 @@ class UserController extends Controller
 			echo $request->input('email');
 			echo $request->input('password');
 			if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
+				echo "gg";
   				return redirect()->route('index');
+			}else{
+				return redirect()->route('user.getlogin');
 			}
 
 		}
