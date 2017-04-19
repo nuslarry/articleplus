@@ -44,13 +44,12 @@ class UserController extends Controller
 		}else{
 			echo $request->input('email');
 			echo $request->input('password');
-			return redirect()->route('index');
-			// if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
-			// 	echo "gg";
-  	// 			return redirect()->route('index');
-			// }else{
-			// 	return redirect()->route('user.getlogin');
-			// }
+			if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
+				echo "gg";
+  				return redirect()->route('index');
+			}else{
+				return redirect()->route('user.getlogin');
+			}
 
 		}
     }
