@@ -20,7 +20,7 @@
 					<input type="password" id="password" name="password" class="form-control">
 				</div>
 				<button type="submit" class="btn btn-primary">sign in</button>
-				{{ csrf_field() }}
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			</form>
 		</div>
 	</div>
