@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
+use Session;
 class UserController extends Controller
 {
 	public function getsignup(){
@@ -53,11 +54,27 @@ class UserController extends Controller
 
 		}
     }
+
     public function getLogOut(){
     	Auth::logout();
         return redirect()->route('index');
     }
     public function profile(){
 		return view('user.profile');
+    }
+
+    public function addArticle(Request $request){
+    	dd($request->session()->all());
+    	$article1="i am article1";
+    	Session::put('article5', 'gginin');
+		if (Session::has('article5'))
+		{
+		   echo "有";
+		}else {
+			echo "沒有";
+		}
+    }
+    public function checkout(){
+        return view('user.checkout');
     }
 }
