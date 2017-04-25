@@ -12,7 +12,7 @@ articleplus
         <h3>Corgi</h3>
         <p>Hi guys, I want to learn human language</p>
         <div class="clearfix">
-          <a href="#" class="btn btn-primary pull-left" role="button">Button</a>
+          <a href="{{route('user.addArticle')}}" class="btn btn-primary pull-left" role="button">Button</a>
         </div>
 
       </div>
