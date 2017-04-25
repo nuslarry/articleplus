@@ -30,6 +30,8 @@ Route::group(['prefix'=>'user'],function(){
 Route::group(['middleware'=>'auth'],function(){
 	Route::get('/profile', ['as'=>'user.profile','uses'=>'UserController@profile']);
 	Route::get('/logout', ['as'=>'user.getLogOut','uses'=>'UserController@getLogOut']);
+	Route::get('/addarticle',['as'=>'user.addArticle','uses'=>'UserController@addArticle']);
+	Route::get('/checkout',['as'=>'user.checkout','uses'=>'UserController@checkout']);
 });
 
 
